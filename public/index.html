@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>APUSH Exam 1 Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#e9e7e0; --surface:#faf9f5; --surface-2:#f1efe8;
+    --ink:#24262b; --muted:#6a6b64; --line:#d9d5c9;
+    --accent:#12405c; --accent-ink:#0d2f45; --accent-soft:rgba(18,64,92,.10);
+    --gold:#9a7327; --gold-soft:rgba(154,115,39,.14);
+    --good:#2f7d54; --good-soft:rgba(47,125,84,.13);
+    --bad:#a63a2c; --bad-soft:rgba(166,58,44,.12);
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --shadow:0 1px 2px rgba(30,26,18,.05),0 6px 18px rgba(30,26,18,.06);
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#15171b; --surface:#1d2026; --surface-2:#23272e;
+    --ink:#e9e7de; --muted:#9a978c; --line:#2e333c;
+    --accent:#6db3dd; --accent-ink:#a9d4ef; --accent-soft:rgba(109,179,221,.14);
+    --gold:#cfa24e; --gold-soft:rgba(207,162,78,.16);
+    --good:#4fb07f; --good-soft:rgba(79,176,127,.15);
+    --bad:#e0796c; --bad-soft:rgba(224,121,108,.15);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35);
+  }}
+  :root[data-theme="dark"]{
+    --bg:#15171b; --surface:#1d2026; --surface-2:#23272e;
+    --ink:#e9e7de; --muted:#9a978c; --line:#2e333c;
+    --accent:#6db3dd; --accent-ink:#a9d4ef; --accent-soft:rgba(109,179,221,.14);
+    --gold:#cfa24e; --gold-soft:rgba(207,162,78,.16);
+    --good:#4fb07f; --good-soft:rgba(79,176,127,.15);
+    --bad:#e0796c; --bad-soft:rgba(224,121,108,.15);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  img{max-width:100%}
+  html{-webkit-text-size-adjust:100%}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  .wrap{max-width:940px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+  h1,h2,h3{margin:0;font-family:var(--serif);font-weight:600;line-height:1.15;text-wrap:balance}
+  a{color:var(--accent)}
+  .label{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+
+  /* header */
+  header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+    background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  .head-in{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-block:14px 10px}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.32rem;letter-spacing:-.01em}
+  .brand .em{color:var(--accent)}
+  .sub{font-size:.82rem;color:var(--muted)}
+  .spacer{flex:1 1 auto}
+  .theme-btn{border:1px solid var(--line);background:var(--surface);color:var(--muted);
+    border-radius:8px;padding:5px 9px;font:inherit;font-size:.8rem;cursor:pointer}
+  nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+  nav.tabs::-webkit-scrollbar{display:none}
+  .tab{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:600;
+    font-size:.92rem;padding:7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;
+    display:flex;align-items:center;gap:7px}
+  .tab:hover{color:var(--ink)}
+  .tab[aria-selected="true"]{background:var(--accent);color:#fff}
+  :root[data-theme="dark"] .tab[aria-selected="true"],
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"]{color:#0f1216}}
+  .tab .cnt{font-size:.74rem;opacity:.7;font-variant-numeric:tabular-nums}
+
+  main{padding-block:22px 80px}
+  .view:focus{outline:none}
+
+  /* intro strip */
+  .intro{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:12px 16px;box-shadow:var(--shadow);flex:1 1 150px}
+  .stat .n{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1;
+    font-variant-numeric:tabular-nums}
+  .stat .k{font-size:.78rem;color:var(--muted);margin-top:4px}
+  .stat .n.good{color:var(--good)}
+
+  /* controls */
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  .search{flex:1 1 220px;min-width:0;display:flex;align-items:center;gap:8px;
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+  .search input{border:0;background:transparent;color:var(--ink);font:inherit;flex:1;min-width:0;outline:none}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:var(--surface);color:var(--muted);
+    font:inherit;font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink)}
+
+  /* browse */
+  .era-group{margin-bottom:26px}
+  .era-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .era-head h2{font-size:1.06rem;color:var(--gold)}
+  .era-head .rule{flex:1;height:1px;background:var(--line)}
+  .era-head .cnt{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .term{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:15px 16px 16px;box-shadow:var(--shadow);position:relative}
+  .term h3{font-size:1.12rem;padding-right:26px}
+  .term .what{margin:8px 0 0;font-size:.9rem}
+  .term .sig{margin:9px 0 0;font-size:.88rem;color:var(--muted);
+    border-left:2px solid var(--gold);padding-left:10px}
+  .term .sig b{color:var(--ink);font-weight:600}
+  .star{position:absolute;top:12px;right:12px;border:0;background:transparent;cursor:pointer;
+    font-size:1.15rem;line-height:1;color:var(--line);padding:2px}
+  .star[aria-pressed="true"]{color:var(--gold)}
+  .empty{color:var(--muted);padding:30px 0;text-align:center}
+
+  /* flashcards */
+  .fc-stage{max-width:560px;margin:0 auto}
+  .flashcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);padding:30px 26px;min-height:270px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;cursor:pointer;gap:12px}
+  .flashcard .fc-era{color:var(--gold)}
+  .flashcard .fc-term{font-family:var(--serif);font-weight:700;font-size:1.7rem;line-height:1.1}
+  .flashcard .fc-hint{font-size:.8rem;color:var(--muted)}
+  .flashcard .fc-what{font-size:1rem}
+  .flashcard .fc-sig{font-size:.92rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+  .flashcard .fc-sig b{color:var(--ink)}
+  .fc-bar{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+  .fc-count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.86rem;min-width:64px;text-align:center}
+  .prog{height:6px;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;
+    overflow:hidden;margin:16px auto 0;max-width:560px}
+  .prog i{display:block;height:100%;background:var(--accent);width:0}
+
+  /* buttons */
+  .btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;
+    font-weight:600;padding:9px 15px;border-radius:10px;cursor:pointer;font-size:.9rem}
+  .btn:hover{border-color:var(--accent)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .btn.primary{color:#0f1216}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#0f1216}}
+  .btn.ghost{background:transparent}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+  .btn.small{padding:6px 11px;font-size:.82rem}
+  .btn.good{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+
+  /* quiz + identify */
+  .panel{max-width:620px;margin:0 auto;background:var(--surface);border:1px solid var(--line);
+    border-radius:16px;box-shadow:var(--shadow);padding:22px}
+  .panel h2{font-size:1.25rem;margin-bottom:6px}
+  .panel p.lead{color:var(--muted);font-size:.92rem;margin:0 0 18px}
+  .field{margin-bottom:16px}
+  .seg{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+  .seg .chip{cursor:pointer}
+  .q-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+  .q-num{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.86rem;font-weight:600}
+  .q-score{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.86rem}
+  .q-clue{font-size:1.02rem;margin:0 0 4px}
+  .q-clue .lead-in{color:var(--gold);font-weight:700;font-size:.72rem;letter-spacing:.09em;
+    text-transform:uppercase;display:block;margin-bottom:7px}
+  .opts{display:grid;gap:9px;margin-top:16px}
+  .opt{text-align:left;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+    font:inherit;font-size:.94rem;padding:12px 14px;border-radius:11px;cursor:pointer;
+    display:flex;gap:10px;align-items:flex-start}
+  .opt:hover:not(:disabled){border-color:var(--accent)}
+  .opt .k{font-weight:700;color:var(--muted);font-family:var(--serif)}
+  .opt.correct{border-color:var(--good);background:var(--good-soft)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+  .opt:disabled{cursor:default}
+  .explain{margin-top:14px;font-size:.9rem;background:var(--surface-2);border:1px solid var(--line);
+    border-left:3px solid var(--gold);border-radius:8px;padding:11px 13px;color:var(--muted)}
+  .explain b{color:var(--ink)}
+  .rowbtns{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+  /* identify */
+  .idcard .term-title{font-family:var(--serif);font-weight:700;font-size:1.6rem;margin-bottom:2px}
+  .idcard .term-era{color:var(--gold);margin-bottom:16px}
+  .scaffold{display:grid;gap:8px;margin:4px 0 14px}
+  .scaffold .row{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:start;
+    font-size:.9rem;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+  .scaffold .row .w{color:var(--gold);font-weight:700}
+  textarea{width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);
+    border-radius:10px;padding:12px;font:inherit;font-size:.92rem;resize:vertical;min-height:120px;outline:none}
+  textarea:focus{border-color:var(--accent)}
+  .model{margin-top:14px}
+  .model h4{margin:0 0 6px;font-family:var(--sans);font-size:.72rem;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--muted)}
+  .model .body{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:.94rem}
+  .hint-note{font-size:.82rem;color:var(--muted);margin-top:10px}
+  .foot{max-width:940px;margin:40px auto 0;color:var(--muted);font-size:.8rem;text-align:center}
+  details.ex{border:1px solid var(--line);border-radius:10px;background:var(--surface-2);padding:11px 14px;margin:0 0 16px}
+  details.ex summary{cursor:pointer;font-weight:600;font-size:.88rem;color:var(--accent-ink)}
+  details.ex .body{font-size:.9rem;color:var(--muted)}
+  details.ex .body b{color:var(--ink)}
+
+  /* games shared */
+  .game-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;
+    margin:0 auto 16px;max-width:760px}
+  .pill{background:var(--surface);border:1px solid var(--line);border-radius:999px;
+    padding:7px 14px;font-size:.86rem;font-weight:600;font-variant-numeric:tabular-nums;
+    display:flex;gap:7px;align-items:center}
+  .pill .lab{color:var(--muted);font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.07em}
+  .pill.hot{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+  .big-msg{max-width:520px;margin:0 auto;text-align:center;background:var(--surface);
+    border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px}
+  .big-msg h2{font-size:1.5rem;margin-bottom:6px}
+  .big-msg p{color:var(--muted);margin:0 0 16px}
+
+  /* match */
+  .match-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:820px;margin:0 auto}
+  .mtile{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);
+    font:inherit;text-align:left;padding:12px 12px;cursor:pointer;min-height:104px;
+    display:flex;align-items:center;box-shadow:var(--shadow);transition:transform .08s,border-color .12s,opacity .2s}
+  .mtile:hover:not(:disabled){border-color:var(--accent);transform:translateY(-2px)}
+  .mtile.term{font-family:var(--serif);font-weight:600;font-size:1.02rem;justify-content:center;text-align:center;
+    background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+  .mtile.clue{font-size:.82rem;color:var(--muted);line-height:1.4}
+  .mtile.sel{border-color:var(--accent);outline:2px solid var(--accent);transform:translateY(-2px)}
+  .mtile.miss{border-color:var(--bad);background:var(--bad-soft)}
+  .mtile.done{opacity:.16;pointer-events:none}
+  @media (max-width:700px){.match-grid{grid-template-columns:repeat(2,1fr)} .mtile{min-height:120px}}
+
+  /* time attack */
+  .tbar{height:10px;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;
+    overflow:hidden;max-width:620px;margin:0 auto 16px}
+  .tbar i{display:block;height:100%;background:var(--good);width:100%;transition:width .25s linear}
+  .tbar i.low{background:var(--bad)}
+
+  /* era sort */
+  .sort-term{font-family:var(--serif);font-weight:700;font-size:1.7rem;text-align:center;
+    line-height:1.15;margin:6px 0 4px;text-wrap:balance}
+  .sort-what{color:var(--muted);font-size:.86rem;text-align:center;margin:0 auto 18px;max-width:52ch}
+  .era-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .era-btn{border:1px solid var(--line);background:var(--surface-2);color:var(--ink);font:inherit;
+    font-weight:600;font-size:.9rem;text-align:left;padding:12px 13px;border-radius:11px;cursor:pointer}
+  .era-btn:hover:not(:disabled){border-color:var(--accent)}
+  .era-btn.correct{border-color:var(--good);background:var(--good-soft);color:var(--good)}
+  .era-btn.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+  @media (max-width:520px){.era-buttons{grid-template-columns:1fr}}
+
+  @media (max-width:520px){
+    .scaffold .row{grid-template-columns:1fr}
+    .flashcard{padding:26px 18px}
+  }
+  @media (max-width:430px){
+    .brand{font-size:1.16rem}
+    .sub{font-size:.78rem}
+    .head-in{padding-block:12px 8px}
+    .tab{font-size:.88rem;padding:7px 12px}
+    .stat{flex:1 1 100%}
+    .panel{padding:18px 15px}
+    .flashcard{min-height:230px}
+    .flashcard .fc-term{font-size:1.42rem}
+    .sort-term{font-size:1.42rem}
+    .opt{font-size:.92rem;padding:13px 13px}
+    .era-btn{padding:13px 12px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="head-in">
+      <div>
+        <div class="brand">APUSH <span class="em">Exam 1</span> Review</div>
+        <div class="sub">Colonial contact through the Constitution &middot; 56 names &amp; terms</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="theme-btn" id="themeBtn" title="Toggle light/dark">Theme</button>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Study modes">
+      <button class="tab" role="tab" data-tab="browse" aria-selected="true">Browse <span class="cnt" id="tc-browse"></span></button>
+      <button class="tab" role="tab" data-tab="cards" aria-selected="false">Flashcards</button>
+      <button class="tab" role="tab" data-tab="quiz" aria-selected="false">Quiz</button>
+      <button class="tab" role="tab" data-tab="match" aria-selected="false">Match</button>
+      <button class="tab" role="tab" data-tab="speed" aria-selected="false">Time Attack</button>
+      <button class="tab" role="tab" data-tab="sort" aria-selected="false">Era Sort</button>
+      <button class="tab" role="tab" data-tab="seq" aria-selected="false">Before / After</button>
+      <button class="tab" role="tab" data-tab="id" aria-selected="false">Identify</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="view" id="view-browse" role="tabpanel" tabindex="-1">
+    <div class="intro">
+      <div class="stat"><div class="n" id="s-total">56</div><div class="k">names &amp; terms to know</div></div>
+      <div class="stat"><div class="n good" id="s-known">0</div><div class="k">marked mastered</div></div>
+      <div class="stat"><div class="n">25 + 5<span style="font-size:.9rem">/10</span></div><div class="k">multiple choice + identifications</div></div>
+    </div>
+    <div class="controls">
+      <label class="search">
+        <span aria-hidden="true" style="color:var(--muted)">&#9906;</span>
+        <input id="search" type="search" placeholder="Search a term, person, or event&hellip;" autocomplete="off">
+      </label>
+    </div>
+    <div class="chips" id="eraChips" style="margin-bottom:18px"></div>
+    <div id="browseList"></div>
+  </section>
+
+  <section class="view" id="view-cards" role="tabpanel" tabindex="-1" hidden>
+    <div class="fc-stage">
+      <div class="flashcard" id="flashcard"></div>
+      <div class="prog"><i id="fcProg"></i></div>
+      <div class="fc-bar">
+        <button class="btn small ghost" id="fcPrev">&larr; Prev</button>
+        <span class="fc-count" id="fcCount"></span>
+        <button class="btn small ghost" id="fcNext">Next &rarr;</button>
+      </div>
+      <div class="fc-bar">
+        <button class="btn small" id="fcShuffle">Shuffle</button>
+        <button class="btn small" id="fcMark">Mark mastered</button>
+        <button class="btn small" id="fcOnlyUnknown">Study unmastered only</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-quiz" role="tabpanel" tabindex="-1" hidden>
+    <div class="panel" id="quizPanel"></div>
+  </section>
+
+  <section class="view" id="view-match" role="tabpanel" tabindex="-1" hidden>
+    <div id="matchWrap"></div>
+  </section>
+
+  <section class="view" id="view-speed" role="tabpanel" tabindex="-1" hidden>
+    <div class="panel" id="speedPanel"></div>
+  </section>
+
+  <section class="view" id="view-sort" role="tabpanel" tabindex="-1" hidden>
+    <div class="panel" id="sortPanel"></div>
+  </section>
+
+  <section class="view" id="view-seq" role="tabpanel" tabindex="-1" hidden>
+    <div class="panel" id="seqPanel"></div>
+  </section>
+
+  <section class="view" id="view-id" role="tabpanel" tabindex="-1" hidden>
+    <div class="panel idcard" id="idPanel"></div>
+  </section>
+
+  <div class="foot">Built from Sebastian&rsquo;s APUSH Exam 1 study guide. Study aid &mdash; verify against your notes and readings.</div>
+</main>
+
+<script>
+/* ---------------- data ---------------- */
+const ERAS = [
+  ["contact","Contact &amp; Spanish America"],
+  ["native","Native America &amp; Conflicts"],
+  ["newengland","New England &amp; the Puritans"],
+  ["labor","Chesapeake, Labor &amp; Slavery"],
+  ["ideas","18th-Century Life &amp; Ideas"],
+  ["road","The Road to Revolution"],
+  ["rev","Revolution &amp; Its Effects"],
+  ["const","Confederation &amp; Constitution"],
+];
+const ERA_NAME = Object.fromEntries(ERAS.map(e=>[e[0],e[1]]));
+const T = [
+  {t:"Aztecs",e:"contact",w:`Powerful Mesoamerican empire centered at Tenochtitlan, conquered by Cortes (1519-1521).`,s:`Conquest came less from arms than from Native allies and Old World disease; the fall of the Aztecs opened Mesoamerica to Spain and its silver funded the empire.`},
+  {t:"Columbian Exchange",e:"contact",w:`The transatlantic transfer of plants, animals, people, and diseases between the Americas, Europe, and Africa after 1492.`,s:`One of history's largest demographic shifts: Old World disease devastated Native populations while New World crops (maize, potatoes) fueled European growth.`},
+  {t:"Black Legend",e:"contact",w:`The idea, spread by Spain's rivals and partly by las Casas, that Spanish colonization was uniquely cruel toward Native peoples.`,s:`Let the English cast their own colonization as more "benevolent," shaping how Europeans justified empire and how Spain's rule was remembered.`},
+  {t:"Bartolome de las Casas",e:"contact",w:`Spanish Dominican friar who condemned the abuse of Natives under the encomienda system in the early 1500s.`,s:`Sparked debate over Native rights (the Valladolid debate) and reform; his early call to use African labor is tied to the rise of the Atlantic slave trade.`},
+  {t:"repartimiento system",e:"contact",w:`Spanish labor system that replaced the encomienda, forcing Native communities to supply rotating labor for Spanish enterprises.`,s:`Shows coerced Native labor persisted under a "reformed" name, keeping exploitation central to Spanish America.`},
+  {t:"mercantilism",e:"contact",w:`Economic theory that national power depended on hoarding wealth (bullion) and a favorable trade balance, with colonies existing to enrich the mother country.`,s:`Justified Britain's Navigation Acts; colonial resentment of these trade restrictions became a grievance behind the Revolution.`},
+
+  {t:"Pequot War",e:"native",w:`1636-37 New England conflict between English colonists (with Narragansett and Mohegan allies) and the Pequot, ending in the Mystic massacre.`,s:`Destroyed the Pequot and opened southern New England to English expansion; an early, brutal model of colonial-Native warfare.`},
+  {t:"Anglo-Powhatan Wars",e:"native",w:`A series of conflicts (1610s-1640s) between Virginia colonists and the Powhatan Confederacy over land and power.`,s:`Broke Powhatan resistance and secured English control of the Chesapeake, setting the pattern of Native displacement as tobacco spread.`},
+  {t:"Metacom's War (King Philip's War)",e:"native",w:`1675-76 war in New England led by the Wampanoag leader Metacom (King Philip) against colonial expansion.`,s:`One of the deadliest wars per capita in American history; it shattered Native power in southern New England and hardened colonist hostility.`},
+  {t:"Pueblo Revolt",e:"native",w:`1680 uprising (Pope's Rebellion) of Pueblo peoples in New Mexico that drove the Spanish out for over a decade.`,s:`The most successful Native revolt against European colonizers in North America; Spain returned with more tolerance of Pueblo culture and religion.`},
+  {t:"Cherokee culture",e:"native",w:`Southeastern Native society with matrilineal kinship, women central to farming and clan life, and a religion built on harmony with nature.`,s:`Its gender roles and spirituality differed sharply from European patriarchy and Christianity, fueling contact-era misunderstanding and conflict.`},
+  {t:"Pontiac's Two Speeches (doc)",e:"native",w:`Speeches by the Ottawa leader Pontiac rallying a pan-Native uprising in 1763 after the French and Indian War, drawing on the prophet Neolin.`,s:`Pontiac's Rebellion led directly to the Proclamation of 1763, and modeled Native efforts at unity and spiritual revival against encroachment.`},
+
+  {t:"William Bradford",e:"newengland",w:`Pilgrim leader and long-serving governor of Plymouth Colony; author of "Of Plymouth Plantation."`,s:`Guided Plymouth's survival and self-government; his history is a key primary source on the Pilgrims and early New England.`},
+  {t:"Mayflower Compact",e:"newengland",w:`1620 agreement signed by the Pilgrims aboard the Mayflower to form a "civil body politic" and govern by majority rule.`,s:`An early example of self-government and the social contract, later celebrated as a root of American democratic tradition.`},
+  {t:"Puritans",e:"newengland",w:`English Calvinists who settled Massachusetts Bay (1630) to purify the Church of England and build a godly "city upon a hill."`,s:`Shaped New England's religion, politics, and emphasis on community and education, leaving a deep mark on American culture.`},
+  {t:"covenant (mission)",e:"newengland",w:`The Puritan belief in a special agreement with God to build a model Christian society (Winthrop's "city upon a hill").`,s:`Gave New England a sense of divine mission and collective purpose, binding social order to religious duty.`},
+  {t:"Half-way covenant",e:"newengland",w:`1662 policy letting the children of church members gain partial membership without a conversion experience.`,s:`A sign of fading Puritan zeal and an attempt to keep the church relevant as piety declined across generations.`},
+  {t:"Salem witch trials",e:"newengland",w:`1692 witchcraft hysteria in Massachusetts that led to about 20 executions, fueled by social tension, gender, and religious fear.`,s:`Marked a crisis of Puritan authority and stands as a classic case of mass hysteria, scapegoating, and theocratic justice gone wrong.`},
+
+  {t:"indentured servants",e:"labor",w:`Poor migrants (mostly English) who worked 4-7 years in exchange for passage, then received freedom dues and sometimes land.`,s:`The main early labor force in the Chesapeake tobacco economy; as supply fell and freed servants demanded land, colonies turned to African slavery.`},
+  {t:"headright system",e:"labor",w:`Virginia policy granting about 50 acres to anyone who paid for their own or another's passage to the colony.`,s:`Spurred immigration and the import of servants while concentrating land among wealthy planters, shaping the Chesapeake's class hierarchy.`},
+  {t:"Bacon's Rebellion",e:"labor",w:`1676 Virginia uprising led by Nathaniel Bacon, in which frontier settlers and former servants attacked Natives and defied Governor Berkeley.`,s:`Exposed class tension between poor whites and the planter elite and pushed the shift from indentured servitude to racial slavery.`},
+  {t:"first generation of Africans",e:"labor",w:`The earliest Africans (from 1619 in Virginia) whose status was fluid: some worked as servants and a few gained freedom or land before slavery hardened.`,s:`Proves racial slavery was built over time through law, not fixed from the start; slave codes gradually made bondage lifelong and hereditary.`},
+  {t:"Middle Passage",e:"labor",w:`The brutal transatlantic voyage that carried enslaved Africans to the Americas in horrific, deadly conditions.`,s:`A central, dehumanizing leg of the triangular trade whose massive death toll underpinned the plantation economies of the Americas.`},
+  {t:"Stono Rebellion",e:"labor",w:`1739 slave uprising in South Carolina, the largest in the colonies, in which the enslaved marched toward Spanish Florida seeking freedom.`,s:`Provoked harsher slave codes (the Negro Act of 1740) restricting the movement, assembly, and education of enslaved people.`},
+  {t:"Half freedom",e:"labor",w:`A status in Dutch New Netherland where some enslaved Africans won conditional freedom while still owing labor or fees, with children kept enslaved.`,s:`Shows how negotiated and varied bondage was before slavery fully hardened, especially outside the English plantation South.`},
+  {t:"Transatlantic economy",e:"labor",w:`The triangular trade network linking Europe, Africa, and the Americas in goods, cash crops, and enslaved people.`,s:`Enriched colonial merchants and wove the colonies into a global economy in which slavery and staple crops were the engine of wealth.`},
+
+  {t:"Enlightenment",e:"ideas",w:`18th-century movement prizing reason, natural rights, and science (Locke, Montesquieu) over tradition and inherited authority.`,s:`Supplied the ideas behind the Revolution: natural rights, social contract, and republican government, later voiced in the Declaration.`},
+  {t:"Great Awakening",e:"ideas",w:`1730s-40s wave of emotional religious revivals led by preachers like Jonathan Edwards and George Whitefield.`,s:`Weakened traditional church authority, spread a more personal and egalitarian faith, and forged intercolonial ties that built shared identity.`},
+  {t:"Deism",e:"ideas",w:`Enlightenment belief that God created the universe but does not intervene, known through reason and nature rather than revelation.`,s:`Influenced founders like Jefferson and Franklin and reinforced ideas of religious tolerance and rational inquiry.`},
+  {t:"John Peter Zenger Trial (doc)",e:"ideas",w:`1735 New York trial in which printer Zenger was acquitted of libel because his criticism of the governor was true.`,s:`An early victory for freedom of the press, establishing that truthful criticism of officials is not libel.`},
+  {t:"John Peter Zenger",e:"ideas",w:`See Zenger Trial: the printer whose acquittal linked truth to a defense against libel charges in 1735.`,s:`His case became a landmark for a free press in the colonies.`,alias:true},
+
+  {t:"French and Indian War",e:"road",w:`The North American theater (1754-63) of the Seven Years' War, in which Britain defeated France with colonial and Native help.`,s:`Removed France from North America but left Britain deep in debt, triggering new taxes and the Proclamation of 1763 that pushed colonists toward revolt.`},
+  {t:"Proclamation of 1763",e:"road",w:`British order banning colonial settlement west of the Appalachians after Pontiac's Rebellion.`,s:`Angered land-hungry colonists and became an early grievance against British control.`},
+  {t:"Stamp Act",e:"road",w:`1765 tax requiring stamped paper on printed materials, the first direct internal tax on the colonies.`,s:`Ignited protest over "no taxation without representation," the Stamp Act Congress, and boycotts that unified colonial resistance.`},
+  {t:"Sons of Liberty",e:"road",w:`Colonial resistance groups (Samuel Adams and others) that organized protests, boycotts, and intimidation against British policy.`,s:`Mobilized popular resistance, staged the Boston Tea Party, and helped coordinate opposition across the colonies.`},
+  {t:"Boston Massacre",e:"road",w:`1770 clash in which British soldiers killed five colonists during a Boston confrontation.`,s:`Became potent anti-British propaganda (Revere's engraving), inflaming opinion against the military presence.`},
+  {t:"Boston Tea Party",e:"road",w:`1773 protest in which the Sons of Liberty dumped British East India Company tea into Boston Harbor over the Tea Act.`,s:`Provoked the Coercive (Intolerable) Acts and sharply escalated the march to war.`},
+  {t:"Intolerable Acts",e:"road",w:`1774 British punitive laws (Coercive Acts) that closed Boston Harbor and stripped Massachusetts self-government after the Tea Party.`,s:`United the colonies in outrage and led to the First Continental Congress, a major step toward war.`},
+  {t:"republicanism",e:"road",w:`The ideology valuing civic virtue, the common good, and government by consent rather than by a monarch.`,s:`Justified independence and shaped the new nation's commitment to representative government and its fear of concentrated, corrupt power.`},
+  {t:"Common Sense",e:"road",w:`Thomas Paine's 1776 pamphlet arguing in plain language for independence and against monarchy.`,s:`Swayed mass public opinion toward independence by making the case accessible to ordinary colonists.`},
+
+  {t:"Continental Congress",e:"rev",w:`The intercolonial governing body (First 1774, Second 1775) that coordinated resistance, ran the war, and declared independence.`,s:`Served as the first national government, proving the colonies could unite and govern themselves.`},
+  {t:"Declaration of Independence",e:"rev",w:`1776 document, drafted mainly by Jefferson, declaring the colonies independent on grounds of natural rights and government by consent.`,s:`Founded the nation on Enlightenment ideals ("all men are created equal") that later reformers used to demand expanded rights.`},
+  {t:"Lord Dunmore's Proclamation",e:"rev",w:`1775 declaration by Virginia's royal governor offering freedom to enslaved people who fled Patriot masters to fight for Britain.`,s:`Thousands sought freedom with the British; it exposed the clash between Patriot liberty rhetoric and slavery and stoked Southern fear.`},
+  {t:"effects of the Revolutionary War",e:"rev",w:`The war's social impact: wider political participation, debates over slavery and women's roles, and the displacement of Loyalists and Native peoples.`,s:`The Revolution was transformative but incomplete, spreading ideals of liberty and equality that were applied unevenly (slavery survived, women lacked rights).`},
+  {t:"Phillis Wheatley",e:"rev",w:`Enslaved African woman in Boston who became a celebrated published poet in the 1770s.`,s:`Her work challenged racist assumptions about Black intellect and was cited in debates over slavery and African humanity.`},
+  {t:"Abigail Adams",e:"rev",w:`Wife of John Adams who urged him to "remember the ladies" in the laws of the new nation.`,s:`An early voice for women's rights and a symbol of women's rising political awareness during the Revolution.`},
+
+  {t:"Articles of Confederation",e:"const",w:`The first U.S. national government (ratified 1781): a weak central government with a one-house Congress that could not tax or regulate trade.`,s:`Its weaknesses (debt, Shays' Rebellion) exposed the need for reform and led to the Constitutional Convention.`},
+  {t:"Northwest Ordinance",e:"const",w:`1787 law organizing the Northwest Territory, setting a path for admitting new states and banning slavery there.`,s:`The Articles' greatest success: it created orderly, equal expansion, supported public education, and limited slavery's spread.`},
+  {t:"Virginia vs. New Jersey plans",e:"const",w:`Rival convention plans: Virginia's (representation by population, favoring big states) versus New Jersey's (equal representation, favoring small states).`,s:`Their clash over representation produced the Great Compromise, the central bargain of the Constitution.`},
+  {t:"Great Compromise",e:"const",w:`The 1787 deal creating a bicameral Congress: a House by population and a Senate with equal state representation.`,s:`Broke the big-state/small-state deadlock and made the Constitution possible.`},
+  {t:"slavery debate at the Convention",e:"const",w:`Disputes over counting and protecting slavery, settled by the Three-Fifths Compromise and a 20-year ban on ending the slave trade (until 1808).`,s:`Wrote slavery into the Constitution and boosted Southern political power, leaving a conflict that would erupt in the Civil War.`},
+  {t:"Federalists vs. Anti-Federalists",e:"const",w:`Federalists backed ratifying the Constitution and a strong central government; Anti-Federalists feared tyranny and demanded a bill of rights.`,s:`Their debate drove ratification and produced the Bill of Rights, beginning the enduring argument over federal versus state power.`},
+  {t:"The Federalist Papers",e:"const",w:`85 essays by Hamilton, Madison, and Jay (as "Publius") arguing for ratifying the Constitution.`,s:`A powerful defense of the Constitution (Madison's Federalist 10 on controlling factions) and a foundational text of American political thought.`},
+  {t:"Bill of Rights",e:"const",w:`The first ten amendments (1791) guaranteeing liberties such as speech, religion, and due process.`,s:`Added to win over Anti-Federalists and secure ratification; it became the cornerstone of American civil liberties.`},
+  {t:"Republican Motherhood",e:"const",w:`The post-Revolution ideal that women should build civic virtue by raising patriotic, virtuous sons and citizens.`,s:`Raised the value placed on women's education while still confining them to the home, a step toward but not yet equality.`},
+  {t:"Benjamin Rush",e:"const",w:`Founder, physician, and reformer who championed women's education so they could raise informed citizens.`,s:`A leading voice for Republican Motherhood and for educational and social reform in the new republic.`},
+  {t:"Judith Sargent Murray",e:"const",w:`Essayist who argued in "On the Equality of the Sexes" (1790) that women only seemed inferior because they were denied education.`,s:`One of the earliest, boldest arguments for women's intellectual equality, well ahead of her time.`},
+];
+const TERMS = T.filter(x=>!x.alias);
+
+/* ---------------- state ---------------- */
+const store = {
+  get(k,d){ try{ const v=localStorage.getItem(k); return v==null?d:JSON.parse(v);}catch(e){return d;} },
+  set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+};
+let known = new Set(store.get("apush_known",[]));
+function saveKnown(){ store.set("apush_known",[...known]); refreshStats(); }
+const idOf = t => t.t;
+
+/* ---------------- theme ---------------- */
+const root=document.documentElement;
+(function(){ const s=store.get("apush_theme",null); if(s) root.setAttribute("data-theme",s); })();
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const dark = matchMedia("(prefers-color-scheme:dark)").matches;
+  const cur = root.getAttribute("data-theme") || (dark?"dark":"light");
+  const next = cur==="dark"?"light":"dark";
+  root.setAttribute("data-theme",next); store.set("apush_theme",next);
+});
+
+/* ---------------- helpers ---------------- */
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+function sample(arr,n,exclude){ const pool=arr.filter(x=>x!==exclude); return shuffle(pool).slice(0,n); }
+
+/* ---------------- tabs ---------------- */
+const tabs=[...document.querySelectorAll(".tab")];
+const views={browse:"view-browse",cards:"view-cards",quiz:"view-quiz",match:"view-match",speed:"view-speed",sort:"view-sort",seq:"view-seq",id:"view-id"};
+function setTab(name){
+  tabs.forEach(b=>b.setAttribute("aria-selected", b.dataset.tab===name));
+  Object.entries(views).forEach(([k,id])=>document.getElementById(id).hidden = k!==name);
+  store.set("apush_tab",name);
+  if(name==="cards") renderCard();
+  if(name==="quiz" && !quiz.active) renderQuizSetup();
+  if(name==="match") newMatch();
+  if(name==="speed" && !speed.active) renderSpeedSetup();
+  if(name==="sort" && !sortG.active) renderSortSetup();
+  if(name==="seq" && !seqG.active) renderSeqSetup();
+  if(name==="id" && !idState.term) nextIdentify();
+}
+tabs.forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+document.getElementById("tc-browse").textContent = TERMS.length;
+
+/* ---------------- browse ---------------- */
+let filterEra="all", q="";
+const chipWrap=document.getElementById("eraChips");
+chipWrap.innerHTML = [`<button class="chip" data-era="all" aria-pressed="true">All</button>`]
+  .concat(ERAS.map(e=>`<button class="chip" data-era="${e[0]}" aria-pressed="false">${e[1]}</button>`)).join("");
+chipWrap.addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b)return;
+  filterEra=b.dataset.era;
+  [...chipWrap.children].forEach(c=>c.setAttribute("aria-pressed", c===b));
+  renderBrowse();
+});
+document.getElementById("search").addEventListener("input",e=>{ q=e.target.value.trim().toLowerCase(); renderBrowse(); });
+
+function matches(t){
+  if(filterEra!=="all" && t.e!==filterEra) return false;
+  if(!q) return true;
+  return (t.t+" "+t.w+" "+t.s).toLowerCase().includes(q);
+}
+function renderBrowse(){
+  const list=document.getElementById("browseList");
+  const groups = ERAS.map(([key,name])=>[key,name,TERMS.filter(t=>t.e===key && matches(t))]).filter(g=>g[2].length);
+  if(!groups.length){ list.innerHTML=`<div class="empty">No terms match &ldquo;${esc(q)}&rdquo;.</div>`; return; }
+  list.innerHTML = groups.map(([key,name,items])=>`
+    <div class="era-group">
+      <div class="era-head"><h2>${name}</h2><span class="rule"></span><span class="cnt">${items.length}</span></div>
+      <div class="cards">
+        ${items.map(t=>{
+          const on = known.has(idOf(t));
+          return `<article class="term">
+            <button class="star" data-id="${esc(t.t)}" aria-pressed="${on}" title="Mark mastered">${on?"&#9733;":"&#9734;"}</button>
+            <h3>${esc(t.t)}</h3>
+            <p class="what">${t.w}</p>
+            <p class="sig"><b>Why it matters:</b> ${t.s}</p>
+          </article>`;
+        }).join("")}
+      </div>
+    </div>`).join("");
+  list.querySelectorAll(".star").forEach(btn=>btn.addEventListener("click",()=>{
+    const id=btn.dataset.id;
+    if(known.has(id))known.delete(id); else known.add(id);
+    saveKnown();
+    const on=known.has(id); btn.setAttribute("aria-pressed",on); btn.innerHTML=on?"&#9733;":"&#9734;";
+  }));
+}
+function refreshStats(){
+  document.getElementById("s-known").textContent = [...known].filter(k=>TERMS.some(t=>t.t===k)).length;
+}
+
+/* ---------------- flashcards ---------------- */
+let fcOrder=shuffle(TERMS.map((_,i)=>i)), fcPos=0, fcFlip=false, fcOnly=false;
+function fcDeck(){ return fcOnly ? fcOrder.filter(i=>!known.has(idOf(TERMS[i]))) : fcOrder; }
+function renderCard(){
+  const deck=fcDeck();
+  const card=document.getElementById("flashcard");
+  if(!deck.length){ card.innerHTML=`<div class="fc-term">All mastered! &#9733;</div><div class="fc-hint">Turn off &ldquo;unmastered only&rdquo; to review everything.</div>`;
+    document.getElementById("fcCount").textContent="0 / 0"; document.getElementById("fcProg").style.width="100%"; return; }
+  if(fcPos>=deck.length) fcPos=0;
+  const t=TERMS[deck[fcPos]];
+  card.innerHTML = fcFlip
+    ? `<div class="fc-what">${t.w}</div><div class="fc-sig"><b>Why it matters:</b> ${t.s}</div>`
+    : `<div class="label fc-era">${ERA_NAME[t.e]}</div><div class="fc-term">${esc(t.t)}</div><div class="fc-hint">Click or press Space to flip</div>`;
+  document.getElementById("fcCount").textContent = `${fcPos+1} / ${deck.length}`;
+  document.getElementById("fcProg").style.width = ((fcPos+1)/deck.length*100)+"%";
+  const on=known.has(idOf(t));
+  document.getElementById("fcMark").textContent = on?"Mastered ✓":"Mark mastered";
+  document.getElementById("fcMark").classList.toggle("good",on);
+}
+document.getElementById("flashcard").addEventListener("click",()=>{fcFlip=!fcFlip;renderCard();});
+document.getElementById("fcNext").addEventListener("click",()=>{const d=fcDeck();if(d.length){fcPos=(fcPos+1)%d.length;fcFlip=false;renderCard();}});
+document.getElementById("fcPrev").addEventListener("click",()=>{const d=fcDeck();if(d.length){fcPos=(fcPos-1+d.length)%d.length;fcFlip=false;renderCard();}});
+document.getElementById("fcShuffle").addEventListener("click",()=>{fcOrder=shuffle(fcOrder);fcPos=0;fcFlip=false;renderCard();});
+document.getElementById("fcOnlyUnknown").addEventListener("click",e=>{fcOnly=!fcOnly;fcPos=0;fcFlip=false;e.target.classList.toggle("good",fcOnly);e.target.textContent=fcOnly?"Studying unmastered ✓":"Study unmastered only";renderCard();});
+document.getElementById("fcMark").addEventListener("click",()=>{const d=fcDeck();if(!d.length)return;const id=idOf(TERMS[d[fcPos]]);if(known.has(id))known.delete(id);else known.add(id);saveKnown();renderCard();});
+document.addEventListener("keydown",e=>{
+  if(document.getElementById("view-cards").hidden) return;
+  if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA") return;
+  if(e.code==="Space"){e.preventDefault();fcFlip=!fcFlip;renderCard();}
+  else if(e.key==="ArrowRight")document.getElementById("fcNext").click();
+  else if(e.key==="ArrowLeft")document.getElementById("fcPrev").click();
+});
+
+/* ---------------- quiz ---------------- */
+let quiz={active:false,items:[],pos:0,score:0,answered:false};
+function renderQuizSetup(){
+  document.getElementById("quizPanel").innerHTML=`
+    <h2>Multiple-choice quiz</h2>
+    <p class="lead">Mirrors the exam's 25-question section. Read the clue, choose the matching term.</p>
+    <div class="field"><span class="label">How many questions</span>
+      <div class="seg" id="qLen">
+        ${[10,25,56].map((n,i)=>`<button class="chip" data-n="${n}" aria-pressed="${i===1}">${n===56?"All 56":n}</button>`).join("")}
+      </div>
+    </div>
+    <div class="field"><span class="label">Topics</span>
+      <div class="seg" id="qEra">
+        <button class="chip" data-era="all" aria-pressed="true">All eras</button>
+        ${ERAS.map(e=>`<button class="chip" data-era="${e[0]}" aria-pressed="false">${e[1]}</button>`).join("")}
+      </div>
+    </div>
+    <div class="rowbtns"><button class="btn primary" id="qStart">Start quiz</button></div>`;
+  let len=25, era="all";
+  const lenWrap=document.getElementById("qLen"), eraWrap=document.getElementById("qEra");
+  lenWrap.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;len=+b.dataset.n;[...lenWrap.children].forEach(c=>c.setAttribute("aria-pressed",c===b));});
+  eraWrap.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;era=b.dataset.era;[...eraWrap.children].forEach(c=>c.setAttribute("aria-pressed",c===b));});
+  document.getElementById("qStart").addEventListener("click",()=>startQuiz(len,era));
+}
+function startQuiz(len,era){
+  const pool = era==="all"?TERMS:TERMS.filter(t=>t.e===era);
+  const picks = shuffle(pool).slice(0,Math.min(len,pool.length));
+  quiz={active:true,items:picks.map(t=>{
+    const distract=sample(TERMS,3,t);
+    return {t, opts:shuffle([t,...distract])};
+  }),pos:0,score:0,answered:false};
+  renderQuizQ();
+}
+function renderQuizQ(){
+  const p=document.getElementById("quizPanel");
+  if(quiz.pos>=quiz.items.length){
+    const pct=Math.round(quiz.score/quiz.items.length*100);
+    p.innerHTML=`<h2>Score: ${quiz.score} / ${quiz.items.length}</h2>
+      <p class="lead">${pct}% &mdash; ${pct>=80?"exam-ready on these.":pct>=60?"getting there; review the misses.":"keep drilling these terms."}</p>
+      <div class="rowbtns"><button class="btn primary" id="qAgain">New quiz</button>
+      <button class="btn" id="qBrowse">Back to browse</button></div>`;
+    document.getElementById("qAgain").addEventListener("click",renderQuizSetup);
+    document.getElementById("qBrowse").addEventListener("click",()=>setTab("browse"));
+    quiz.active=false; return;
+  }
+  const it=quiz.items[quiz.pos];
+  quiz.answered=false;
+  p.innerHTML=`
+    <div class="q-meta"><span class="q-num">Question ${quiz.pos+1} of ${quiz.items.length}</span>
+      <span class="q-score">Score ${quiz.score}</span></div>
+    <p class="q-clue"><span class="lead-in">Which term fits?</span>${it.t.w} <b style="color:var(--muted);font-weight:600">Why it matters:</b> <span style="color:var(--muted)">${it.t.s}</span></p>
+    <div class="opts" id="qOpts">
+      ${it.opts.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${"ABCD"[i]}</span><span>${esc(o.t)}</span></button>`).join("")}
+    </div>
+    <div id="qAfter"></div>`;
+  const opts=document.getElementById("qOpts");
+  opts.addEventListener("click",e=>{
+    const b=e.target.closest(".opt"); if(!b||quiz.answered)return;
+    quiz.answered=true;
+    const chosen=it.opts[+b.dataset.i];
+    const correct = chosen===it.t;
+    if(correct)quiz.score++;
+    [...opts.children].forEach(c=>{ c.disabled=true;
+      const o=it.opts[+c.dataset.i];
+      if(o===it.t)c.classList.add("correct");
+      else if(c===b)c.classList.add("wrong");
+    });
+    document.getElementById("qAfter").innerHTML=`
+      <div class="explain">${correct?"<b>Correct.</b> ":`<b>Answer: ${esc(it.t.t)}.</b> `}${it.t.s}</div>
+      <div class="rowbtns"><button class="btn primary" id="qNext">${quiz.pos+1>=quiz.items.length?"See results":"Next question"}</button></div>`;
+    document.getElementById("qNext").addEventListener("click",()=>{quiz.pos++;renderQuizQ();});
+    document.getElementById("qNext").focus();
+  });
+}
+
+/* ---------------- identify ---------------- */
+let idState={term:null,revealed:false};
+function nextIdentify(){
+  idState.term = TERMS[Math.floor(Math.random()*TERMS.length)];
+  idState.revealed=false; renderIdentify();
+}
+function renderIdentify(){
+  const t=idState.term, p=document.getElementById("idPanel");
+  const rows=[["Who","the people or group"],["What","what happened, cause &rarr; effect"],["When","a decade, e.g. 1770s"],["Where","the place, if it matters"],["Why / how","significance: what it led to"]];
+  p.innerHTML=`
+    <div class="q-meta"><span class="label">Identification practice</span>
+      <button class="btn small ghost" id="idNew">New term &#8635;</button></div>
+    <div class="term-title">${esc(t.t)}</div>
+    <div class="term-era label">${ERA_NAME[t.e]}</div>
+    <p class="lead">Write 5-7 sentences. Give the decade (not the exact year) and frame the significance as the sequence &mdash; what it caused or what it came after. Plan with the scaffold.</p>
+    <details class="ex"><summary>See a full example (your teacher's format)</summary>
+      <div class="body" style="margin-top:10px">
+        <p style="margin:0 0 6px"><b>The Boston Tea Party</b></p>
+        <p style="margin:0 0 4px"><b>Who:</b> Patriots (the Sons of Liberty).</p>
+        <p style="margin:0 0 4px"><b>When:</b> 1770s.</p>
+        <p style="margin:0 0 4px"><b>What:</b> Britain cut the tea tax to rescue the failing East India Company; colonists felt tricked into accepting the tax and dumped the tea into Boston Harbor.</p>
+        <p style="margin:0"><b>Why / how:</b> It provoked the Intolerable Acts (closed the harbor, forced quartering, ended Massachusetts self-government), which pushed the colonies into the First Continental Congress.</p>
+      </div>
+    </details>
+    <div class="scaffold">
+      ${rows.map(r=>`<div class="row"><span class="w">${r[0]}</span><span style="color:var(--muted)">${r[1]}</span></div>`).join("")}
+    </div>
+    <textarea id="idText" placeholder="Draft your identification here&hellip;"></textarea>
+    <div class="rowbtns">
+      <button class="btn primary" id="idReveal">${idState.revealed?"Hide model answer":"Show model answer"}</button>
+      <button class="btn" id="idSkip">Next term</button>
+    </div>
+    <div id="idModel"></div>
+    <p class="hint-note">Tip: several terms connect &mdash; e.g. Puritans link to the covenant and the Half-way covenant. Tie related terms together for a fuller answer.</p>`;
+  document.getElementById("idNew").addEventListener("click",nextIdentify);
+  document.getElementById("idSkip").addEventListener("click",nextIdentify);
+  document.getElementById("idReveal").addEventListener("click",()=>{idState.revealed=!idState.revealed;renderIdentify();});
+  if(idState.revealed){
+    const dec = YEAR[t.t]!=null ? `~${decade(YEAR[t.t])}` : "see readings";
+    document.getElementById("idModel").innerHTML=`
+      <div class="model"><h4>Model answer &mdash; the core points</h4>
+      <div class="body">
+        <p style="margin:0 0 6px"><b>When:</b> ${dec}</p>
+        <p style="margin:0 0 6px"><b>What:</b> ${t.w}</p>
+        <p style="margin:0"><b>Why / how it matters:</b> ${t.s}</p>
+      </div></div>`;
+  }
+}
+
+/* ---------------- match game ---------------- */
+function clueShort(t){ return t.w.length>112 ? t.w.slice(0,110).replace(/\s+\S*$/,"")+"…" : t.w; }
+let matchG={tiles:[],sel:null,cleared:0,misses:0,t0:0,timer:null,lock:false};
+function newMatch(){
+  clearInterval(matchG.timer);
+  const picks=shuffle(TERMS).slice(0,6);
+  let tiles=[];
+  picks.forEach((t,i)=>{ tiles.push({pid:i,kind:"term",text:t.t}); tiles.push({pid:i,kind:"clue",text:clueShort(t)}); });
+  tiles=shuffle(tiles).map((x,idx)=>({...x,idx}));
+  matchG={tiles,sel:null,cleared:0,misses:0,t0:Date.now(),timer:null,lock:false};
+  renderMatch();
+  matchG.timer=setInterval(()=>{const el=document.getElementById("mTime"); if(el)el.textContent=((Date.now()-matchG.t0)/1000).toFixed(1)+"s";},200);
+}
+function renderMatch(){
+  document.getElementById("matchWrap").innerHTML=`
+    <div class="game-bar">
+      <span class="pill"><span class="lab">Time</span><span id="mTime">0.0s</span></span>
+      <span class="pill"><span class="lab">Pairs</span><span id="mPairs">0 / 6</span></span>
+      <span class="pill"><span class="lab">Misses</span><span id="mMiss">0</span></span>
+      <button class="btn small" id="mNew">New board</button>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:.86rem;margin:0 auto 14px;max-width:52ch">Tap a term, then the clue that matches it. Clear all six pairs.</p>
+    <div class="match-grid" id="mGrid">
+      ${matchG.tiles.map(x=>`<button class="mtile ${x.kind}" data-idx="${x.idx}">${esc(x.text)}</button>`).join("")}
+    </div>`;
+  document.getElementById("mNew").addEventListener("click",newMatch);
+  document.getElementById("mGrid").addEventListener("click",onMatchTap);
+}
+function onMatchTap(e){
+  if(matchG.lock)return;
+  const b=e.target.closest(".mtile"); if(!b)return;
+  const idx=+b.dataset.idx, tile=matchG.tiles[idx];
+  if(b.classList.contains("done")||b.classList.contains("sel"))return;
+  if(matchG.sel==null){ matchG.sel=idx; b.classList.add("sel"); return; }
+  const first=matchG.tiles[matchG.sel], firstEl=document.querySelector('.mtile[data-idx="'+matchG.sel+'"]');
+  if(first.pid===tile.pid && first.kind!==tile.kind){
+    b.classList.add("done"); firstEl.classList.add("done");
+    matchG.cleared++; matchG.sel=null;
+    document.getElementById("mPairs").textContent=matchG.cleared+" / 6";
+    if(matchG.cleared===6){ clearInterval(matchG.timer); setTimeout(matchWin,350); }
+  }else{
+    matchG.misses++; document.getElementById("mMiss").textContent=matchG.misses;
+    matchG.lock=true; b.classList.add("sel","miss"); firstEl.classList.add("miss");
+    setTimeout(()=>{ b.classList.remove("sel","miss"); firstEl.classList.remove("sel","miss"); matchG.sel=null; matchG.lock=false; },650);
+  }
+}
+function matchWin(){
+  const secs=((Date.now()-matchG.t0)/1000).toFixed(1);
+  document.getElementById("matchWrap").innerHTML=`<div class="big-msg">
+    <h2>Board cleared! \u{1F389}</h2><p>${secs}s &middot; ${matchG.misses} misses</p>
+    <button class="btn primary" id="mAgain">New board</button></div>`;
+  document.getElementById("mAgain").addEventListener("click",newMatch);
+}
+
+/* ---------------- time attack ---------------- */
+let speed={active:false,timer:null,left:0,score:0,streak:0,best:store.get("apush_speed_best",0),cur:null};
+function renderSpeedSetup(){
+  document.getElementById("speedPanel").innerHTML=`
+    <h2>Time Attack</h2>
+    <p class="lead">Sixty seconds. Match as many clues to terms as you can &mdash; a running streak is worth bonus points.</p>
+    <div class="game-bar"><span class="pill"><span class="lab">Best</span><span>${speed.best}</span></span></div>
+    <div class="rowbtns"><button class="btn primary" id="spStart">Start &mdash; 60 s</button></div>`;
+  document.getElementById("spStart").addEventListener("click",startSpeed);
+}
+function startSpeed(){
+  speed.active=true; speed.left=60; speed.score=0; speed.streak=0;
+  nextSpeedQ();
+  speed.timer=setInterval(()=>{ speed.left-=0.1; if(speed.left<=0){speed.left=0;endSpeed();}else{
+    const i=document.getElementById("spBar"); if(i){i.style.width=(speed.left/60*100)+"%"; i.classList.toggle("low",speed.left<=10);}
+    const tt=document.getElementById("spTime"); if(tt)tt.textContent=Math.ceil(speed.left)+"s";
+  }},100);
+}
+function nextSpeedQ(){
+  const t=TERMS[Math.floor(Math.random()*TERMS.length)];
+  const opts=shuffle([t,...sample(TERMS,3,t)]);
+  speed.cur={t,opts};
+  document.getElementById("speedPanel").innerHTML=`
+    <div class="tbar"><i id="spBar" style="width:${speed.left/60*100}%"></i></div>
+    <div class="game-bar">
+      <span class="pill"><span class="lab">Time</span><span id="spTime">${Math.ceil(speed.left)}s</span></span>
+      <span class="pill"><span class="lab">Score</span><span id="spScore">${speed.score}</span></span>
+      <span class="pill ${speed.streak>=3?'hot':''}"><span class="lab">Streak</span><span>${speed.streak}</span></span>
+    </div>
+    <p class="q-clue" style="text-align:center">${t.w}</p>
+    <div class="opts" id="spOpts">
+      ${opts.map((o,i)=>`<button class="opt" data-i="${i}"><span class="k">${"ABCD"[i]}</span><span>${esc(o.t)}</span></button>`).join("")}
+    </div>`;
+  document.getElementById("spOpts").addEventListener("click",onSpeedAns);
+}
+function onSpeedAns(e){
+  const b=e.target.closest(".opt"); if(!b||!speed.active)return;
+  if(speed.cur.opts[+b.dataset.i]===speed.cur.t){ speed.streak++; speed.score+=1+Math.min(speed.streak-1,4); nextSpeedQ(); }
+  else{ speed.streak=0;
+    [...document.getElementById("spOpts").children].forEach(c=>{ c.disabled=true;
+      if(speed.cur.opts[+c.dataset.i]===speed.cur.t)c.classList.add("correct"); else if(c===b)c.classList.add("wrong"); });
+    setTimeout(()=>{ if(speed.active) nextSpeedQ(); },750);
+  }
+}
+function endSpeed(){
+  clearInterval(speed.timer); speed.active=false;
+  const rec=speed.score>speed.best; if(rec){speed.best=speed.score;store.set("apush_speed_best",speed.best);}
+  document.getElementById("speedPanel").innerHTML=`<div class="big-msg">
+    <h2>${speed.score} points</h2><p>${rec?"New best! \u{1F525}":"Best so far: "+speed.best}</p>
+    <div class="rowbtns" style="justify-content:center"><button class="btn primary" id="spAgain">Play again</button></div></div>`;
+  document.getElementById("spAgain").addEventListener("click",startSpeed);
+}
+
+/* ---------------- era sort ---------------- */
+let sortG={active:false,cur:null,streak:0,best:store.get("apush_sort_best",0),answered:false};
+function renderSortSetup(){
+  document.getElementById("sortPanel").innerHTML=`
+    <h2>Era Sort</h2>
+    <p class="lead">Place each term in its time period. The exam expects you to keep terms in the right chronological era, so this drills exactly that.</p>
+    <div class="game-bar"><span class="pill"><span class="lab">Best streak</span><span>${sortG.best}</span></span></div>
+    <div class="rowbtns"><button class="btn primary" id="soStart">Start</button></div>`;
+  document.getElementById("soStart").addEventListener("click",()=>{sortG.active=true;sortG.streak=0;nextSort();});
+}
+function nextSort(){ sortG.cur=TERMS[Math.floor(Math.random()*TERMS.length)]; sortG.answered=false; renderSort(); }
+function renderSort(){
+  const t=sortG.cur;
+  document.getElementById("sortPanel").innerHTML=`
+    <div class="game-bar">
+      <span class="pill ${sortG.streak>=3?'hot':''}"><span class="lab">Streak</span><span>${sortG.streak}</span></span>
+      <span class="pill"><span class="lab">Best</span><span>${sortG.best}</span></span>
+    </div>
+    <div class="sort-term">${esc(t.t)}</div>
+    <p class="sort-what">${t.w}</p>
+    <div class="era-buttons" id="soBtns">
+      ${ERAS.map(e=>`<button class="era-btn" data-era="${e[0]}">${e[1]}</button>`).join("")}
+    </div>
+    <div id="soFb"></div>`;
+  document.getElementById("soBtns").addEventListener("click",onSortAns);
+}
+function onSortAns(e){
+  const b=e.target.closest(".era-btn"); if(!b||sortG.answered)return;
+  sortG.answered=true; const correct=b.dataset.era===sortG.cur.e;
+  [...document.getElementById("soBtns").children].forEach(c=>{ c.disabled=true;
+    if(c.dataset.era===sortG.cur.e)c.classList.add("correct"); else if(c===b)c.classList.add("wrong"); });
+  if(correct){ sortG.streak++; if(sortG.streak>sortG.best){sortG.best=sortG.streak;store.set("apush_sort_best",sortG.best);} }
+  else sortG.streak=0;
+  document.getElementById("soFb").innerHTML=`
+    <div class="explain">${correct?`<b>Right era &mdash; ${decade(YEAR[sortG.cur.t])}.</b> `:`<b>Actually: ${ERA_NAME[sortG.cur.e]}, ${decade(YEAR[sortG.cur.t])}.</b> `}${sortG.cur.s}</div>
+    <div class="rowbtns"><button class="btn primary" id="soNext">Next term</button></div>`;
+  document.getElementById("soNext").addEventListener("click",nextSort);
+  document.getElementById("soNext").focus();
+}
+
+/* ---------------- before / after (sequencing) ---------------- */
+/* Approximate years for ORDERING ONLY. The teacher wants sequence + decade,
+   not exact dates, so feedback names the decade, never a precise year. */
+const YEAR={
+  "Aztecs":1521,"Columbian Exchange":1492,"Black Legend":1550,"Bartolome de las Casas":1542,
+  "repartimiento system":1550,"mercantilism":1651,"Pequot War":1637,"Anglo-Powhatan Wars":1622,
+  "Metacom's War (King Philip's War)":1675,"Pueblo Revolt":1680,"Cherokee culture":1700,
+  "Pontiac's Two Speeches (doc)":1763,"William Bradford":1621,"Mayflower Compact":1620,
+  "Puritans":1630,"covenant (mission)":1630,"Half-way covenant":1662,"Salem witch trials":1692,
+  "indentured servants":1620,"headright system":1618,"Bacon's Rebellion":1676,
+  "first generation of Africans":1619,"Middle Passage":1650,"Stono Rebellion":1739,
+  "Half freedom":1644,"Transatlantic economy":1700,"Enlightenment":1730,"Great Awakening":1740,
+  "Deism":1750,"John Peter Zenger Trial (doc)":1735,"French and Indian War":1758,
+  "Proclamation of 1763":1763,"Stamp Act":1765,"Sons of Liberty":1765,"Boston Massacre":1770,
+  "Boston Tea Party":1773,"Intolerable Acts":1774,"republicanism":1774,"Common Sense":1776,
+  "Continental Congress":1775,"Declaration of Independence":1776,"Lord Dunmore's Proclamation":1775,
+  "effects of the Revolutionary War":1783,"Phillis Wheatley":1773,"Abigail Adams":1776,
+  "Articles of Confederation":1781,"Northwest Ordinance":1787,"Virginia vs. New Jersey plans":1787,
+  "Great Compromise":1787,"slavery debate at the Convention":1787,"Federalists vs. Anti-Federalists":1788,
+  "The Federalist Papers":1788,"Bill of Rights":1791,"Republican Motherhood":1790,
+  "Benjamin Rush":1790,"Judith Sargent Murray":1790
+};
+const decade = y => (Math.floor(y/10)*10)+"s";
+let seqG={active:false,a:null,b:null,streak:0,best:store.get("apush_seq_best",0),answered:false};
+const datedTerms = ()=>TERMS.filter(t=>YEAR[t.t]!=null);
+function renderSeqSetup(){
+  document.getElementById("seqPanel").innerHTML=`
+    <h2>Before or After</h2>
+    <p class="lead">The exam wants sequence, not exact dates: roughly the decade, and what came before or after what. Pick which event happened first.</p>
+    <div class="game-bar"><span class="pill"><span class="lab">Best streak</span><span>${seqG.best}</span></span></div>
+    <div class="rowbtns"><button class="btn primary" id="sqStart">Start</button></div>`;
+  document.getElementById("sqStart").addEventListener("click",()=>{seqG.active=true;seqG.streak=0;nextSeq();});
+}
+function nextSeq(){
+  const pool=datedTerms(); let a,b,g=0;
+  do{ a=pool[Math.floor(Math.random()*pool.length)]; b=pool[Math.floor(Math.random()*pool.length)]; g++; }
+  while((a===b||YEAR[a.t]===YEAR[b.t])&&g<80);
+  seqG.a=a; seqG.b=b; seqG.answered=false; renderSeq();
+}
+function renderSeq(){
+  const a=seqG.a,b=seqG.b;
+  document.getElementById("seqPanel").innerHTML=`
+    <div class="game-bar">
+      <span class="pill ${seqG.streak>=3?'hot':''}"><span class="lab">Streak</span><span>${seqG.streak}</span></span>
+      <span class="pill"><span class="lab">Best</span><span>${seqG.best}</span></span>
+    </div>
+    <p class="lead" style="text-align:center;margin-bottom:16px">Which came first?</p>
+    <div class="opts" id="sqOpts">
+      <button class="opt" data-k="a"><span class="k">1</span><span style="font-family:var(--serif);font-weight:600;font-size:1.02rem">${esc(a.t)}</span></button>
+      <button class="opt" data-k="b"><span class="k">2</span><span style="font-family:var(--serif);font-weight:600;font-size:1.02rem">${esc(b.t)}</span></button>
+    </div>
+    <div id="sqFb"></div>`;
+  document.getElementById("sqOpts").addEventListener("click",onSeqAns);
+}
+function onSeqAns(e){
+  const btn=e.target.closest(".opt"); if(!btn||seqG.answered)return;
+  seqG.answered=true;
+  const ya=YEAR[seqG.a.t], yb=YEAR[seqG.b.t], firstKey=ya<yb?"a":"b";
+  const correct=btn.dataset.k===firstKey;
+  [...document.getElementById("sqOpts").children].forEach(c=>{ c.disabled=true;
+    if(c.dataset.k===firstKey)c.classList.add("correct"); else c.classList.add("wrong"); });
+  if(correct){ seqG.streak++; if(seqG.streak>seqG.best){seqG.best=seqG.streak;store.set("apush_seq_best",seqG.best);} }
+  else seqG.streak=0;
+  const earlier=ya<yb?seqG.a:seqG.b, later=ya<yb?seqG.b:seqG.a;
+  document.getElementById("sqFb").innerHTML=`
+    <div class="explain">${correct?"<b>Correct.</b> ":"<b>Not quite.</b> "}<b>${esc(earlier.t)}</b> (${decade(YEAR[earlier.t])}) came before <b>${esc(later.t)}</b> (${decade(YEAR[later.t])}).</div>
+    <div class="rowbtns"><button class="btn primary" id="sqNext">Next pair</button></div>`;
+  document.getElementById("sqNext").addEventListener("click",nextSeq);
+  document.getElementById("sqNext").focus();
+}
+
+/* ---------------- boot ---------------- */
+refreshStats();
+renderBrowse();
+setTab(store.get("apush_tab","browse"));
+</script>
+</body>
+</html>

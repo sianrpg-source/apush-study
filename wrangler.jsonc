@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "apush-study",
+  "compatibility_date": "2026-09-20",
+
+  // Static site: the single index.html is served straight from Cloudflare's edge.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "single-page-application"
+  },
+
+  // Custom domain. wrangler creates the DNS record + route on deploy.
+  "routes": [
+    { "pattern": "apush.summitredeemer.cloud", "custom_domain": true }
+  ]
+}
